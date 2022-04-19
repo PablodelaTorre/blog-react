@@ -23,7 +23,7 @@ const Post = () => {
     }
 
     return (
-        <div>
+        <div className="center">
             <h1>
                 {data.id} - {data.title}
             </h1>

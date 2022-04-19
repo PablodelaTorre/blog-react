@@ -13,8 +13,7 @@ const Blog = () => {
                 <h1>Loading...</h1>;
                 <Spinner/>
             </div>
-        )
-        
+        )    
     }
 
     if (error !== "") {
@@ -31,10 +30,9 @@ const Blog = () => {
     };
 
     return (
-        <div>
-            <h1>Blog</h1>
+        <div className="center">
+            <h1 className="center">Blog</h1>
             <input
-                className="form-control mb-2"
                 type="text"
                 value={searchParams.get("filter") || ""}
                 onChange={handleChange}
@@ -47,8 +45,8 @@ const Blog = () => {
                     return name.startsWith(filter.toLowerCase());
                 })
                 .map((item) => (
-                    <h4 key={item.id}>
-                        <Link to={`/blog/${item.id}`}>
+                    <h4 key={item.id} className="item">
+                        <Link to={`/blog/${item.id}`} className="item">
                             {item.id} - {item.title}
                         </Link>
                     </h4>

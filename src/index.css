@@ -52,3 +52,23 @@
   color: rgb(96, 96, 255);
   border: 1px solid rgb(96, 96, 255);
 }
+
+input {
+  width: 50vw;
+  border: none;
+  box-shadow: 1px 1px 1px 1px grey;
+  height: 4vh;
+  border-radius: 0.5rem;
+}
+
+.item {
+  text-decoration: none;
+  color: burlywood;
+  transition: 0.3s;
+}
+
+
+.item:hover {
+  transform: scale(1.1);
+  color: rgb(168, 168, 192);
+}
