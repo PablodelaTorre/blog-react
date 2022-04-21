@@ -32,13 +32,8 @@ const Blog = () => {
     return (
         <div className="center">
             <h1 className="center">Blog</h1>
-            <input
-                type="text"
-                value={searchParams.get("filter") || ""}
-                onChange={handleChange}
-            />
-            {data
-                .filter((item) => {
+            <input type="text" value={searchParams.get("filter") || ""} onChange={handleChange}/>
+            {data.filter((item) => {
                     let filter = searchParams.get("filter");
                     if (!filter) return true;
                     let name = item.title.toLowerCase();

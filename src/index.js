@@ -8,18 +8,21 @@ import Contacto from "./routes/Contacto";
 import NoEncontrada from "./components/NoEncontrada";
 import Post from "./components/Post";
 import Inicio from "./routes/Inicio";
+import UserProvider from "./context/UserProvider"
 
 ReactDOM.render(
-  <BrowserRouter>
-      <Routes>
-          <Route path="/" element={<App/>}>
-              <Route index element={<Inicio/>} />
-              <Route path="blog" element={<Blog/>} />
-              <Route path="blog/:id" element={<Post/>} />
-              <Route path="contacto" element={<Contacto/>} />
-              <Route path="*" element={<NoEncontrada/>} />
-          </Route>
-      </Routes>
-  </BrowserRouter>,
-  document.getElementById("root")
+    <BrowserRouter>
+        <UserProvider>
+            <Routes>
+                <Route path="/" element={<App/>}>
+                    <Route index element={<Inicio/>} />
+                    <Route path="blog" element={<Blog/>} />
+                    <Route path="blog/:id" element={<Post/>} />
+                    <Route path="contacto" element={<Contacto/>} />
+                    <Route path="*" element={<NoEncontrada/>} />
+                </Route>
+            </Routes>
+        </UserProvider>
+    </BrowserRouter>,
+    document.getElementById("root")
 );
