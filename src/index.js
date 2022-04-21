@@ -9,6 +9,8 @@ import NoEncontrada from "./components/NoEncontrada";
 import Post from "./components/Post";
 import Inicio from "./routes/Inicio";
 import UserProvider from "./context/UserProvider"
+import RutaProtegida from './routes/RutaProtegida';
+import VerificarUsuario from './components/VerificarUsuario';
 
 ReactDOM.render(
     <BrowserRouter>
@@ -19,6 +21,7 @@ ReactDOM.render(
                     <Route path="blog" element={<Blog/>} />
                     <Route path="blog/:id" element={<Post/>} />
                     <Route path="contacto" element={<Contacto/>} />
+                    <Route path="protegida" element={<VerificarUsuario><RutaProtegida/></VerificarUsuario>} />
                     <Route path="*" element={<NoEncontrada/>} />
                 </Route>
             </Routes>
